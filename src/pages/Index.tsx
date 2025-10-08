@@ -53,7 +53,7 @@ const Index = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert('Спасибо! Мы скоро с вами свяжемся.');
   };
@@ -62,9 +62,9 @@ const Index = () => {
     <div className="min-h-screen">
       <header className="fixed top-0 w-full bg-white shadow-md z-50">
         <div className="max-w-[1230px] mx-auto px-4 py-4 flex justify-between items-center">
-          <a href="#home" className="flex items-center">
-            <div className="text-2xl font-bold text-turquoise">Мажорик</div>
-          </a>
+          <button onClick={() => scrollToSection('home')} className="text-2xl font-bold text-turquoise">
+            Мажорик
+          </button>
           
           <nav className="hidden lg:block">
             <ul className="flex gap-6 text-sm">
@@ -112,18 +112,18 @@ const Index = () => {
 
       <section
         id="home"
-        className="h-screen relative flex items-center justify-center bg-cover bg-center"
+        className="min-h-screen pt-20 relative flex items-center justify-center bg-cover bg-center"
         style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1587616211892-cc1b8faec8d4?w=1200)' }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
-        <div className="relative z-10 max-w-[1230px] w-full mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="relative z-10 max-w-[1230px] w-full mx-auto px-4 py-12 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="text-white max-w-xl">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
               Оставьте заявку<br />И мы скоро с вами свяжемся
             </h1>
           </div>
           <div className="bg-white rounded-lg p-6 shadow-xl max-w-md w-full">
-            <h2 className="text-2xl font-bold text-center mb-6">Оставить заявку</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-center mb-6">Оставить заявку</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               <Input type="text" placeholder="Введите ваше имя" required className="h-12" />
               <Input type="tel" placeholder="Введите ваш номер телефона" className="h-12" />
@@ -136,17 +136,17 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="slider1" className="min-h-screen bg-white py-20 flex items-center justify-center">
+      <section id="slider1" className="min-h-screen bg-white py-12 sm:py-20 flex items-center justify-center">
         <div className="max-w-[1230px] w-full mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8">Наши Услуги</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">Наши Услуги</h2>
           
           <div className="relative overflow-hidden">
             <div className="flex transition-transform duration-500 gap-4" style={{ transform: `translateX(-${currentServiceSlide * 100}%)` }}>
               {services.map((slideGroup, slideIndex) => (
-                <div key={slideIndex} className="min-w-full grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div key={slideIndex} className="min-w-full grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
                   {slideGroup.map((service, index) => (
-                    <div key={index} className="rounded-lg p-6 h-[200px] md:h-[250px] relative shadow-md" style={{ backgroundColor: service.bg }}>
-                      <p className="text-lg md:text-xl font-medium">{service.title}</p>
+                    <div key={index} className="rounded-lg p-4 sm:p-6 h-[180px] sm:h-[200px] md:h-[250px] relative shadow-md hover:shadow-xl transition-shadow cursor-pointer" style={{ backgroundColor: service.bg }}>
+                      <p className="text-base sm:text-lg md:text-xl font-medium">{service.title}</p>
                     </div>
                   ))}
                 </div>
@@ -155,27 +155,27 @@ const Index = () => {
           </div>
 
           <div className="flex justify-center gap-4 mt-8">
-            <button onClick={() => setCurrentServiceSlide(Math.max(0, currentServiceSlide - 1))} className="p-3 hover:bg-gray-100 rounded-lg" disabled={currentServiceSlide === 0}>
-              <svg width="15" height="25" viewBox="0 0 15 25"><path d="M12 3L3 12.5L12 22" stroke="black" strokeWidth="2"/></svg>
+            <button onClick={() => setCurrentServiceSlide(0)} className="p-3 hover:bg-gray-100 rounded-lg transition-colors disabled:opacity-50" disabled={currentServiceSlide === 0}>
+              <svg width="15" height="25" viewBox="0 0 15 25" fill="none"><path d="M12 3L3 12.5L12 22" stroke="black" strokeWidth="2"/></svg>
             </button>
-            <button onClick={() => setCurrentServiceSlide(Math.min(services.length - 1, currentServiceSlide + 1))} className="p-3 hover:bg-gray-100 rounded-lg" disabled={currentServiceSlide === services.length - 1}>
-              <svg width="15" height="25" viewBox="0 0 15 25"><path d="M3 3L12 12.5L3 22" stroke="black" strokeWidth="2"/></svg>
+            <button onClick={() => setCurrentServiceSlide(1)} className="p-3 hover:bg-gray-100 rounded-lg transition-colors disabled:opacity-50" disabled={currentServiceSlide === 1}>
+              <svg width="15" height="25" viewBox="0 0 15 25" fill="none"><path d="M3 3L12 12.5L3 22" stroke="black" strokeWidth="2"/></svg>
             </button>
           </div>
         </div>
       </section>
 
-      <section id="gallery" className="min-h-screen bg-[#2E2E2E] py-20 flex items-center justify-center">
+      <section id="gallery" className="min-h-screen bg-[#2E2E2E] py-12 sm:py-20 flex items-center justify-center">
         <div className="max-w-[1230px] w-full mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8 text-white">Галерея</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 text-white">Галерея</h2>
           
           <div className="relative overflow-hidden">
             <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${currentGallerySlide * 100}%)` }}>
               {gallery.map((slideGroup, slideIndex) => (
-                <div key={slideIndex} className="min-w-full grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div key={slideIndex} className="min-w-full grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
                   {slideGroup.map((img, index) => (
                     <div key={index} className="overflow-hidden rounded-lg shadow-lg">
-                      <img src={img} alt={`Gallery ${index + 1}`} className="w-full h-[200px] md:h-[250px] object-cover hover:scale-105 transition-transform duration-300 cursor-pointer" />
+                      <img src={img} alt={`Фото ${index + 1}`} className="w-full h-[180px] sm:h-[200px] md:h-[250px] object-cover hover:scale-110 transition-transform duration-300 cursor-pointer" loading="lazy" />
                     </div>
                   ))}
                 </div>
@@ -184,20 +184,20 @@ const Index = () => {
           </div>
 
           <div className="flex justify-center gap-4 mt-8">
-            <button onClick={() => setCurrentGallerySlide(Math.max(0, currentGallerySlide - 1))} className="p-3 hover:bg-gray-700 rounded-lg" disabled={currentGallerySlide === 0}>
-              <svg width="15" height="25" viewBox="0 0 15 25"><path d="M12 3L3 12.5L12 22" stroke="white" strokeWidth="2"/></svg>
+            <button onClick={() => setCurrentGallerySlide(0)} className="p-3 hover:bg-gray-700 rounded-lg transition-colors disabled:opacity-50" disabled={currentGallerySlide === 0}>
+              <svg width="15" height="25" viewBox="0 0 15 25" fill="none"><path d="M12 3L3 12.5L12 22" stroke="white" strokeWidth="2"/></svg>
             </button>
-            <button onClick={() => setCurrentGallerySlide(Math.min(gallery.length - 1, currentGallerySlide + 1))} className="p-3 hover:bg-gray-700 rounded-lg" disabled={currentGallerySlide === gallery.length - 1}>
-              <svg width="15" height="25" viewBox="0 0 15 25"><path d="M3 3L12 12.5L3 22" stroke="white" strokeWidth="2"/></svg>
+            <button onClick={() => setCurrentGallerySlide(1)} className="p-3 hover:bg-gray-700 rounded-lg transition-colors disabled:opacity-50" disabled={currentGallerySlide === 1}>
+              <svg width="15" height="25" viewBox="0 0 15 25" fill="none"><path d="M3 3L12 12.5L3 22" stroke="white" strokeWidth="2"/></svg>
             </button>
           </div>
         </div>
       </section>
 
-      <section id="post" className="h-screen relative flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1200)' }}>
+      <section id="post" className="min-h-screen pt-20 relative flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1200)' }}>
         <div className="absolute inset-0 bg-black/50"></div>
-        <div className="relative z-10 bg-white rounded-lg p-8 shadow-xl max-w-2xl w-full mx-4">
-          <h2 className="text-2xl font-bold text-center mb-6">Если остались вопросы, оставьте заявление</h2>
+        <div className="relative z-10 bg-white rounded-lg p-6 sm:p-8 shadow-xl max-w-2xl w-full mx-4">
+          <h2 className="text-xl sm:text-2xl font-bold text-center mb-6">Если остались вопросы, оставьте заявление</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input type="text" placeholder="Введите ваше имя" required className="h-12" />
             <Input type="tel" placeholder="Введите ваш номер телефона" className="h-12" />
@@ -209,16 +209,36 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="map" className="h-[75vh] relative">
-        <iframe src="https://yandex.ru/map-widget/v1/?ll=48.574368%2C54.388171&mode=whatshere&whatshere%5Bpoint%5D=48.574369%2C54.388171&whatshere%5Bzoom%5D=17&z=17" width="100%" height="100%" frameBorder="0" allowFullScreen className="w-full h-full"></iframe>
+      <section id="map" className="h-[500px] sm:h-[600px] md:h-[75vh] relative bg-gray-200">
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=48.574368%2C54.388171&z=17&l=map&pt=48.574368,54.388171,pm2rdm" width="100%" height="100%" frameBorder="0" allowFullScreen className="w-full h-full" title="Карта" />
+        <div className="absolute bottom-4 left-4 bg-white rounded-lg shadow-lg p-4 max-w-xs hidden sm:block">
+          <p className="font-bold mb-2">Детский центр Мажорик</p>
+          <p className="text-sm text-gray-600">г. Ульяновск, ул. Еремецкого, 38</p>
+          <p className="text-sm text-turquoise mt-2">+7 908 479 58 63</p>
+        </div>
       </section>
 
       <footer className="bg-[#181818] text-white py-8">
-        <div className="max-w-[1230px] mx-auto px-4 flex flex-col items-center justify-center gap-4">
-          <p>Адрес: г. Ульяновск Еремецкого 38</p>
-          <p>+7 908 479 58 63</p>
-          <p>Email: info@majorik.com</p>
-          <p className="text-sm opacity-70">Политика конфиденциальности</p>
+        <div className="max-w-[1230px] mx-auto px-4">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 text-center sm:text-left">
+            <div>
+              <p className="font-bold mb-2">Адрес</p>
+              <p className="text-sm opacity-70">г. Ульяновск, ул. Еремецкого, 38</p>
+            </div>
+            <div>
+              <p className="font-bold mb-2">Контакты</p>
+              <p className="text-sm opacity-70">+7 908 479 58 63</p>
+              <p className="text-sm opacity-70">info@majorik.com</p>
+            </div>
+            <div>
+              <p className="font-bold mb-2">Режим работы</p>
+              <p className="text-sm opacity-70">Пн-Пт: 9:00 - 19:00</p>
+              <p className="text-sm opacity-70">Сб: 10:00 - 16:00</p>
+            </div>
+          </div>
+          <div className="mt-6 pt-6 border-t border-gray-700 text-center text-sm opacity-70">
+            <p>© 2025 Детский центр Мажорик. Все права защищены.</p>
+          </div>
         </div>
       </footer>
     </div>
