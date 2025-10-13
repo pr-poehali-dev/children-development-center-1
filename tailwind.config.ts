@@ -53,6 +53,7 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				turquoise: 'hsl(var(--turquoise))',
+				coral: 'hsl(var(--coral))',
 				cyan: 'hsl(var(--cyan))',
 				mint: 'hsl(var(--mint))',
 				yellow: 'hsl(var(--yellow))',

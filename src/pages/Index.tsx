@@ -19,15 +19,15 @@ const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const services = [
-    { title: 'Мини-сад', age: 'от 3 лет, Пн/Ср/Пт 9:00-13:00', icon: 'Home', color: 'bg-gradient-to-br from-pink-200 to-pink-300' },
-    { title: 'Вместе с мамой', age: '1-1.5 года, Вт/Чт 9:00-13:00', icon: 'Heart', color: 'bg-gradient-to-br from-yellow-200 to-yellow-300' },
-    { title: 'Говорушки', age: '3-4 года, Пн/Ср 17:00-18:00', icon: 'MessageCircle', color: 'bg-gradient-to-br from-cyan-200 to-cyan-300' },
-    { title: 'Учусь, играя', age: '4-6 лет, Вт/Чт 17:00-19:30', icon: 'BookOpen', color: 'bg-gradient-to-br from-purple-200 to-purple-300' },
-    { title: 'Скоро в школу', age: '6-7 лет, Вт/Чт 17:15-18:15', icon: 'GraduationCap', color: 'bg-gradient-to-br from-mint-200 to-mint-300' },
-    { title: 'Английский язык', age: 'от 3 до 11 лет', icon: 'Globe', color: 'bg-gradient-to-br from-rose-200 to-rose-300' },
-    { title: 'Рисование', age: '4-12 лет, Сб 10:15-11:15', icon: 'Palette', color: 'bg-gradient-to-br from-pink-200 to-pink-300' },
-    { title: 'Мастер-класс', age: '4-12 лет, Сб 11:15-12:15', icon: 'Paintbrush', color: 'bg-gradient-to-br from-yellow-200 to-yellow-300' },
-    { title: 'Экспресс-курс', age: 'Подготовка к школе, Сб', icon: 'Zap', color: 'bg-gradient-to-br from-cyan-200 to-cyan-300' },
+    { title: 'Мини-сад', age: 'от 3 лет, Пн/Ср/Пт 9:00-13:00', icon: 'Home', color: 'bg-turquoise/20' },
+    { title: 'Вместе с мамой', age: '1-1.5 года, Вт/Чт 9:00-13:00', icon: 'Heart', color: 'bg-coral/20' },
+    { title: 'Говорушки', age: '3-4 года, Пн/Ср 17:00-18:00', icon: 'MessageCircle', color: 'bg-turquoise/20' },
+    { title: 'Учусь, играя', age: '4-6 лет, Вт/Чт 17:00-19:30', icon: 'BookOpen', color: 'bg-coral/20' },
+    { title: 'Скоро в школу', age: '6-7 лет, Вт/Чт 17:15-18:15', icon: 'GraduationCap', color: 'bg-turquoise/20' },
+    { title: 'Английский язык', age: 'от 3 до 11 лет', icon: 'Globe', color: 'bg-coral/20' },
+    { title: 'Рисование', age: '4-12 лет, Сб 10:15-11:15', icon: 'Palette', color: 'bg-turquoise/20' },
+    { title: 'Мастер-класс', age: '4-12 лет, Сб 11:15-12:15', icon: 'Paintbrush', color: 'bg-coral/20' },
+    { title: 'Экспресс-курс', age: 'Подготовка к школе, Сб', icon: 'Zap', color: 'bg-turquoise/20' },
   ];
 
   const teachers = [
@@ -79,10 +79,11 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-turquoise to-cyan rounded-2xl flex items-center justify-center">
-                <Icon name="Sparkles" className="text-white" size={24} />
-              </div>
-              <span className="text-2xl font-bold text-navy">Мажорик</span>
+              <img 
+                src="https://cdn.poehali.dev/files/dd22a4e3-5081-43fc-ba0d-95a46b82f4fb.jpg" 
+                alt="Мажорик логотип"
+                className="h-16 w-auto object-contain"
+              />
             </div>
             
             <div className="hidden md:flex gap-8">
@@ -125,7 +126,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
-              <Badge className="bg-mint text-navy">Детский центр в Ульяновске</Badge>
+              <Badge className="bg-turquoise/20 text-navy border-turquoise">Детский центр в Ульяновске</Badge>
               <h1 className="text-5xl md:text-6xl font-bold text-navy leading-tight">
                 Занятия для детей от 1 года
               </h1>
@@ -136,7 +137,7 @@ const Index = () => {
               <div className="flex gap-4 flex-wrap">
                 <Button 
                   size="lg" 
-                  className="bg-turquoise hover:bg-turquoise/90 text-white"
+                  className="bg-coral hover:bg-coral/90 text-white"
                   onClick={() => scrollToSection('контакты')}
                 >
                   Записаться на занятие
@@ -152,7 +153,7 @@ const Index = () => {
               </div>
             </div>
             <div className="relative animate-scale-in">
-              <div className="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-br from-pink-200 to-yellow-200 rounded-[3rem] blur-3xl opacity-50"></div>
+              <div className="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-br from-turquoise/30 to-coral/30 rounded-[3rem] blur-3xl opacity-50"></div>
               <img 
                 src="https://images.unsplash.com/photo-1587616211892-cc1b8faec8d4?w=800" 
                 alt="Дети на занятии"
@@ -177,7 +178,7 @@ const Index = () => {
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className={`h-32 ${service.color} flex items-center justify-center`}>
-                  <Icon name={service.icon} size={48} className="text-white" />
+                  <Icon name={service.icon} size={48} className="text-turquoise" />
                 </div>
                 <CardHeader>
                   <CardTitle className="text-navy">{service.title}</CardTitle>
@@ -250,7 +251,7 @@ const Index = () => {
               <Card key={index} className="border-0 shadow-lg hover-scale">
                 <CardHeader>
                   <div className="flex flex-col gap-3">
-                    <CardTitle className="text-turquoise text-xl">{item.day}</CardTitle>
+                    <CardTitle className="text-coral text-xl">{item.day}</CardTitle>
                     <p className="text-gray-700 leading-relaxed">{item.classes}</p>
                   </div>
                 </CardHeader>
@@ -314,7 +315,7 @@ const Index = () => {
                   <div>
                     <Textarea placeholder="Сообщение (необязательно)" rows={4} />
                   </div>
-                  <Button type="submit" className="w-full bg-turquoise hover:bg-turquoise/90 h-12">
+                  <Button type="submit" className="w-full bg-coral hover:bg-coral/90 h-12">
                     Отправить заявку
                   </Button>
                 </form>
@@ -325,7 +326,7 @@ const Index = () => {
               <Card className="border-0 shadow-lg">
                 <CardHeader>
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-turquoise/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-turquoise/20 rounded-xl flex items-center justify-center flex-shrink-0">
                       <Icon name="MapPin" className="text-turquoise" size={24} />
                     </div>
                     <div>
@@ -383,10 +384,11 @@ const Index = () => {
       <footer className="bg-navy text-white py-12 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="w-12 h-12 bg-gradient-to-br from-turquoise to-cyan rounded-2xl flex items-center justify-center">
-              <Icon name="Sparkles" className="text-white" size={24} />
-            </div>
-            <span className="text-2xl font-bold">Мажорик</span>
+            <img 
+              src="https://cdn.poehali.dev/files/dd22a4e3-5081-43fc-ba0d-95a46b82f4fb.jpg" 
+              alt="Мажорик логотип"
+              className="h-20 w-auto object-contain"
+            />
           </div>
           <p className="text-gray-400 mb-2">Детский центр в Ульяновске</p>
           <p className="text-gray-400 mb-4">г. Ульяновск, Новый город, ул. Карбышева, 49</p>
