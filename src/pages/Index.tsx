@@ -19,42 +19,41 @@ const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const services = [
-    { title: 'Мини-сад', age: 'от 3 лет', icon: 'Home', color: 'bg-gradient-to-br from-pink-200 to-pink-300' },
-    { title: 'Логопед', age: 'индивидуально', icon: 'MessageCircle', color: 'bg-gradient-to-br from-yellow-200 to-yellow-300' },
-    { title: 'Английский', age: 'от 5 лет', icon: 'Globe', color: 'bg-gradient-to-br from-cyan-200 to-cyan-300' },
-    { title: 'Шахматы', age: 'от 5 лет', icon: 'Trophy', color: 'bg-gradient-to-br from-purple-200 to-purple-300' },
-    { title: 'Рисование', age: 'от 4 лет', icon: 'Palette', color: 'bg-gradient-to-br from-mint-200 to-mint-300' },
-    { title: 'Психолог', age: 'любой возраст', icon: 'Heart', color: 'bg-gradient-to-br from-rose-200 to-rose-300' },
+    { title: 'Мини-сад', age: 'от 3 лет, Пн/Ср/Пт 9:00-13:00', icon: 'Home', color: 'bg-gradient-to-br from-pink-200 to-pink-300' },
+    { title: 'Вместе с мамой', age: '1-1.5 года, Вт/Чт 9:00-13:00', icon: 'Heart', color: 'bg-gradient-to-br from-yellow-200 to-yellow-300' },
+    { title: 'Говорушки', age: '3-4 года, Пн/Ср 17:00-18:00', icon: 'MessageCircle', color: 'bg-gradient-to-br from-cyan-200 to-cyan-300' },
+    { title: 'Учусь, играя', age: '4-6 лет, Вт/Чт 17:00-19:30', icon: 'BookOpen', color: 'bg-gradient-to-br from-purple-200 to-purple-300' },
+    { title: 'Скоро в школу', age: '6-7 лет, Вт/Чт 17:15-18:15', icon: 'GraduationCap', color: 'bg-gradient-to-br from-mint-200 to-mint-300' },
+    { title: 'Английский язык', age: 'от 3 до 11 лет', icon: 'Globe', color: 'bg-gradient-to-br from-rose-200 to-rose-300' },
+    { title: 'Рисование', age: '4-12 лет, Сб 10:15-11:15', icon: 'Palette', color: 'bg-gradient-to-br from-pink-200 to-pink-300' },
+    { title: 'Мастер-класс', age: '4-12 лет, Сб 11:15-12:15', icon: 'Paintbrush', color: 'bg-gradient-to-br from-yellow-200 to-yellow-300' },
+    { title: 'Экспресс-курс', age: 'Подготовка к школе, Сб', icon: 'Zap', color: 'bg-gradient-to-br from-cyan-200 to-cyan-300' },
   ];
 
   const teachers = [
-    { name: 'Анна Смирнова', role: 'Логопед', experience: '12 лет опыта', image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Anna' },
-    { name: 'Мария Петрова', role: 'Преподаватель английского', experience: '8 лет опыта', image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Maria' },
-    { name: 'Елена Козлова', role: 'Психолог', experience: '15 лет опыта', image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Elena' },
-    { name: 'Ольга Новикова', role: 'Педагог раннего развития', experience: '10 лет опыта', image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Olga' },
+    { name: 'Ольга Анатольевна', role: 'Педагог мини-сада и подготовки к школе', experience: '15+ лет опыта', image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Olga' },
+    { name: 'Лилия Николаевна', role: 'Педагог раннего развития', experience: '10+ лет опыта', image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Liliya' },
+    { name: 'Елизавета Сергеевна', role: 'Логопед', experience: '8+ лет опыта', image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Elizaveta' },
+    { name: 'Надежда Сергеевна', role: 'Педагог развивающих занятий', experience: '12+ лет опыта', image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Nadezhda' },
+    { name: 'Алина Сергеевна', role: 'Преподаватель английского', experience: '9+ лет опыта', image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Alina' },
+    { name: 'Татьяна Петровна', role: 'Педагог по рисованию', experience: '14+ лет опыта', image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Tatyana' },
   ];
 
   const reviews = [
     { name: 'Екатерина М.', text: 'Отличный центр! Ребёнок ходит с удовольствием. Преподаватели — профессионалы своего дела.', rating: 5 },
-    { name: 'Алексей П.', text: 'Очень благодарны логопеду Анне! За 3 месяца невероятный прогресс у сына.', rating: 5 },
+    { name: 'Алексей П.', text: 'Очень благодарны логопеду Елизавете Сергеевне! За 3 месяца невероятный прогресс у сына.', rating: 5 },
     { name: 'Наталья К.', text: 'Уютная атмосфера, внимательный персонал. Дочка каждый день просится на занятия!', rating: 5 },
     { name: 'Дмитрий С.', text: 'Рекомендую всем! Индивидуальный подход к каждому ребёнку.', rating: 5 },
   ];
 
   const schedule = [
-    { day: 'Понедельник', time: '09:00 - 19:00', classes: 'Мини-сад, Английский, Логопед' },
-    { day: 'Вторник', time: '09:00 - 19:00', classes: 'Мини-сад, Рисование, Шахматы' },
-    { day: 'Среда', time: '09:00 - 19:00', classes: 'Мини-сад, Английский, Психолог' },
-    { day: 'Четверг', time: '09:00 - 19:00', classes: 'Мини-сад, Логопед, Рисование' },
-    { day: 'Пятница', time: '09:00 - 19:00', classes: 'Мини-сад, Шахматы, Английский' },
-    { day: 'Суббота', time: '10:00 - 16:00', classes: 'Группы выходного дня' },
-  ];
-
-  const prices = [
-    { title: 'Разовое занятие', price: '800₽', features: ['1 занятие', 'Любое направление', 'Без абонемента'] },
-    { title: 'Абонемент 8 занятий', price: '5600₽', features: ['8 занятий', 'Любое направление', 'Скидка 12%'], popular: true },
-    { title: 'Мини-сад (полдня)', price: '12000₽/мес', features: ['Пн-Пт 9:00-13:00', 'Питание включено', 'Развивающие занятия'] },
-    { title: 'Мини-сад (полный день)', price: '18000₽/мес', features: ['Пн-Пт 9:00-19:00', 'Питание включено', 'Все занятия'] },
+    { day: 'Понедельник', classes: 'Мини-сад (9:00-13:00), Говорушки (17:00-18:00), Английский (17:00-18:30, 18:30-19:30)' },
+    { day: 'Вторник', classes: 'Вместе с мамой (9:00-13:00), Учусь играя (17:00-18:00), Скоро в школу (17:15-18:15)' },
+    { day: 'Среда', classes: 'Мини-сад (9:00-13:00), Говорушки (17:00-18:00), Английский (18:30-19:30)' },
+    { day: 'Четверг', classes: 'Вместе с мамой (9:00-13:00), Учусь играя (17:00-18:00, 18:30-19:30), Скоро в школу (17:15-18:15)' },
+    { day: 'Пятница', classes: 'Мини-сад (9:00-13:00)' },
+    { day: 'Суббота', classes: 'Говорушки (10:00-12:00), Рисование (10:15-11:15), Мастер-класс (11:15-12:15), Экспресс-курс (12:15-14:00)' },
+    { day: 'Воскресенье', classes: 'Английский язык 1 класс (10:00-11:30)' },
   ];
 
   const gallery = [
@@ -76,7 +75,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
-      {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
@@ -87,9 +85,8 @@ const Index = () => {
               <span className="text-2xl font-bold text-navy">Мажорик</span>
             </div>
             
-            {/* Desktop Menu */}
             <div className="hidden md:flex gap-8">
-              {['Главная', 'Галерея', 'Преподаватели', 'Расписание', 'Отзывы', 'Цены', 'Контакты'].map((item) => (
+              {['Главная', 'Галерея', 'Преподаватели', 'Расписание', 'Отзывы', 'Контакты'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -100,7 +97,6 @@ const Index = () => {
               ))}
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               className="md:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -109,10 +105,9 @@ const Index = () => {
             </button>
           </div>
 
-          {/* Mobile Menu */}
           {isMenuOpen && (
             <div className="md:hidden pb-4 animate-fade-in">
-              {['Главная', 'Галерея', 'Преподаватели', 'Расписание', 'Отзывы', 'Цены', 'Контакты'].map((item) => (
+              {['Главная', 'Галерея', 'Преподаватели', 'Расписание', 'Отзывы', 'Контакты'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -126,17 +121,16 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section id="главная" className="pt-32 pb-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
               <Badge className="bg-mint text-navy">Детский центр в Ульяновске</Badge>
               <h1 className="text-5xl md:text-6xl font-bold text-navy leading-tight">
-                Занятия для детей от 3 лет
+                Занятия для детей от 1 года
               </h1>
               <p className="text-xl text-gray-600">
-                Мини-сад, логопед, английский и другие развивающие курсы. 
+                Мини-сад, раннее развитие, английский и другие программы. 
                 Создаём пространство, где дети растут счастливыми!
               </p>
               <div className="flex gap-4 flex-wrap">
@@ -151,9 +145,9 @@ const Index = () => {
                 <Button 
                   size="lg" 
                   variant="outline"
-                  onClick={() => scrollToSection('цены')}
+                  onClick={() => scrollToSection('расписание')}
                 >
-                  Посмотреть цены
+                  Посмотреть расписание
                 </Button>
               </div>
             </div>
@@ -169,7 +163,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
@@ -188,7 +181,7 @@ const Index = () => {
                 </div>
                 <CardHeader>
                   <CardTitle className="text-navy">{service.title}</CardTitle>
-                  <CardDescription className="text-lg">{service.age}</CardDescription>
+                  <CardDescription className="text-base leading-relaxed">{service.age}</CardDescription>
                 </CardHeader>
               </Card>
             ))}
@@ -196,7 +189,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Gallery */}
       <section id="галерея" className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -221,14 +213,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Teachers */}
       <section id="преподаватели" className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">Преподаватели</h2>
             <p className="text-xl text-gray-600">Профессиональная команда экспертов</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {teachers.map((teacher, index) => (
               <Card key={index} className="text-center hover-scale border-0 shadow-lg">
                 <CardHeader>
@@ -239,7 +230,7 @@ const Index = () => {
                     </Avatar>
                   </div>
                   <CardTitle className="text-navy">{teacher.name}</CardTitle>
-                  <CardDescription className="text-lg">{teacher.role}</CardDescription>
+                  <CardDescription className="text-base leading-relaxed">{teacher.role}</CardDescription>
                   <Badge variant="secondary" className="mt-2">{teacher.experience}</Badge>
                 </CardHeader>
               </Card>
@@ -248,7 +239,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Schedule */}
       <section id="расписание" className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -259,15 +249,9 @@ const Index = () => {
             {schedule.map((item, index) => (
               <Card key={index} className="border-0 shadow-lg hover-scale">
                 <CardHeader>
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                    <div className="sm:w-1/4">
-                      <CardTitle className="text-turquoise">{item.day}</CardTitle>
-                      <p className="text-gray-600 mt-1">{item.time}</p>
-                    </div>
-                    <Separator orientation="vertical" className="hidden sm:block h-12" />
-                    <div className="sm:w-3/4">
-                      <p className="text-gray-700">{item.classes}</p>
-                    </div>
+                  <div className="flex flex-col gap-3">
+                    <CardTitle className="text-turquoise text-xl">{item.day}</CardTitle>
+                    <p className="text-gray-700 leading-relaxed">{item.classes}</p>
                   </div>
                 </CardHeader>
               </Card>
@@ -276,7 +260,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Reviews */}
       <section id="отзывы" className="py-20 px-4 bg-gradient-to-br from-pink-50 to-yellow-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -309,53 +292,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Prices */}
-      <section id="цены" className="py-20 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">Цены</h2>
-            <p className="text-xl text-gray-600">Прозрачные тарифы без скрытых платежей</p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {prices.map((price, index) => (
-              <Card 
-                key={index} 
-                className={`hover-scale border-0 shadow-lg ${
-                  price.popular ? 'ring-2 ring-turquoise' : ''
-                }`}
-              >
-                {price.popular && (
-                  <div className="bg-turquoise text-white text-center py-2 font-medium">
-                    Популярный
-                  </div>
-                )}
-                <CardHeader>
-                  <CardTitle className="text-navy">{price.title}</CardTitle>
-                  <div className="text-4xl font-bold text-turquoise mt-4">{price.price}</div>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {price.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <Icon name="Check" className="text-mint mt-1" size={20} />
-                        <span className="text-gray-700">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button 
-                    className="w-full mt-6 bg-turquoise hover:bg-turquoise/90"
-                    onClick={() => scrollToSection('контакты')}
-                  >
-                    Выбрать
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form */}
       <section id="контакты" className="py-20 px-4 bg-gradient-to-br from-turquoise/10 to-cyan/10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -394,7 +330,7 @@ const Index = () => {
                     </div>
                     <div>
                       <CardTitle className="text-navy text-lg">Адрес</CardTitle>
-                      <CardDescription className="mt-2">г. Ульяновск, ул. Еремецкого, 38</CardDescription>
+                      <CardDescription className="mt-2">г. Ульяновск, Новый город<br />ул. Карбышева, 49</CardDescription>
                     </div>
                   </div>
                 </CardHeader>
@@ -418,11 +354,11 @@ const Index = () => {
                 <CardHeader>
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-yellow/50 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Icon name="Mail" className="text-navy" size={24} />
+                      <Icon name="Clock" className="text-navy" size={24} />
                     </div>
                     <div>
-                      <CardTitle className="text-navy text-lg">Email</CardTitle>
-                      <CardDescription className="mt-2">info@majorik.com</CardDescription>
+                      <CardTitle className="text-navy text-lg">Режим работы</CardTitle>
+                      <CardDescription className="mt-2">Пн-Пт: 9:00 - 19:30<br />Сб-Вс: 10:00 - 14:00</CardDescription>
                     </div>
                   </div>
                 </CardHeader>
@@ -430,21 +366,20 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Map */}
           <div className="mt-12 rounded-3xl overflow-hidden shadow-2xl h-96">
             <iframe
-              src="https://yandex.ru/map-widget/v1/?ll=48.574368%2C54.388171&mode=whatshere&whatshere%5Bpoint%5D=48.574369%2C54.388171&whatshere%5Bzoom%5D=17&z=17"
+              src="https://yandex.ru/map-widget/v1/?ll=48.389347%2C54.316821&z=17&l=map&pt=48.389347,54.316821,pm2rdm"
               width="100%"
               height="100%"
               frameBorder="0"
               allowFullScreen
               style={{ position: 'relative' }}
+              title="Карта"
             ></iframe>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-navy text-white py-12 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
@@ -453,7 +388,8 @@ const Index = () => {
             </div>
             <span className="text-2xl font-bold">Мажорик</span>
           </div>
-          <p className="text-gray-400 mb-4">Детский центр в Ульяновске</p>
+          <p className="text-gray-400 mb-2">Детский центр в Ульяновске</p>
+          <p className="text-gray-400 mb-4">г. Ульяновск, Новый город, ул. Карбышева, 49</p>
           <Separator className="my-6 bg-gray-700" />
           <p className="text-gray-500">© 2025 Мажорик. Все права защищены.</p>
         </div>
