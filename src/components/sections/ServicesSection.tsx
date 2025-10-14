@@ -15,7 +15,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="min-h-screen flex items-center py-20 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">Наши занятия</h2>

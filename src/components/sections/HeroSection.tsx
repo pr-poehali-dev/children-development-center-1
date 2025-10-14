@@ -8,7 +8,7 @@ interface HeroSectionProps {
 
 const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
   return (
-    <section id="главная" className="pt-32 pb-20 px-4">
+    <section id="главная" className="min-h-screen flex items-center px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-in">
@@ -41,9 +41,9 @@ const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
           <div className="relative animate-scale-in">
             <div className="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-br from-turquoise/30 to-coral/30 rounded-[3rem] blur-3xl opacity-50"></div>
             <img 
-              src="https://images.unsplash.com/photo-1587616211892-cc1b8faec8d4?w=800" 
-              alt="Дети на занятии"
-              className="relative rounded-[3rem] shadow-2xl w-full object-cover"
+              src="https://cdn.poehali.dev/projects/afe0c899-c9af-4cdc-abfd-00dca9600f22/files/05bb118e-22e7-4d02-90cc-feeec6256e98.jpg" 
+              alt="Дети играют с пирамидками"
+              className="relative rounded-[3rem] shadow-2xl w-full object-cover h-[500px]"
             />
           </div>
         </div>

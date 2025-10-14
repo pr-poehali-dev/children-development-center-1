@@ -6,7 +6,7 @@ import Icon from '@/components/ui/icon';
 
 const ContactSection = () => {
   return (
-    <section id="контакты" className="py-20 px-4 bg-gradient-to-br from-turquoise/10 to-cyan/10">
+    <section id="контакты" className="min-h-screen flex items-center py-20 px-4 bg-gradient-to-br from-turquoise/10 to-cyan/10">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">Контакты</h2>

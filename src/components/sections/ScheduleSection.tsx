@@ -78,7 +78,7 @@ const schedule: ScheduleDay[] = [
 
 const ScheduleSection = () => {
   return (
-    <section id="расписание" className="py-20 px-4">
+    <section id="расписание" className="min-h-screen flex items-center py-20 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">Расписание</h2>
