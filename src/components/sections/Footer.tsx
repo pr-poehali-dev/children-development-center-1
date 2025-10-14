@@ -2,7 +2,7 @@ import { Separator } from '@/components/ui/separator';
 
 const Footer = () => {
   return (
-    <footer className="bg-coral text-white py-12 px-4">
+    <footer className="bg-navy text-white py-12 px-4">
       <div className="max-w-7xl mx-auto text-center">
         <div className="flex items-center justify-center gap-3 mb-6">
           <img 
@@ -11,10 +11,10 @@ const Footer = () => {
             className="h-20 w-auto object-contain"
           />
         </div>
-        <p className="text-white/90 mb-2 text-lg">Детский центр в Ульяновске</p>
-        <p className="text-white/90 mb-4 text-lg">г. Ульяновск, Новый город, ул. Карбышева, 49</p>
-        <Separator className="my-6 bg-white/30" />
-        <p className="text-white/80">© 2025 Мажорик. Все права защищены.</p>
+        <p className="text-gray-400 mb-2">Детский центр в Ульяновске</p>
+        <p className="text-gray-400 mb-4">г. Ульяновск, Новый город, ул. Карбышева, 49</p>
+        <Separator className="my-6 bg-gray-700" />
+        <p className="text-gray-500">© 2025 Мажорик. Все права защищены.</p>
       </div>
     </footer>
   );

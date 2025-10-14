@@ -13,7 +13,7 @@ const teachers = [
 
 const TeachersSection = () => {
   return (
-    <section id="преподаватели" className="min-h-screen flex items-center py-20 px-4 bg-white">
+    <section id="преподаватели" className="py-20 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">Преподаватели</h2>
