@@ -21,25 +21,25 @@ const ReviewsSection = () => {
   return (
     <section id="отзывы" className="min-h-screen flex items-center py-20 px-8">
       <div className="max-w-7xl mx-auto w-full">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">Отзывы</h2>
-          <p className="text-xl text-gray-600">Что говорят родители</p>
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy mb-6">Отзывы</h2>
+          <p className="text-2xl lg:text-3xl text-gray-600">Что говорят родители</p>
         </div>
-        <Carousel className="max-w-5xl mx-auto">
+        <Carousel className="max-w-6xl mx-auto">
           <CarouselContent>
             {reviews.map((review, index) => (
               <CarouselItem key={index}>
-                <Card className="border-0 shadow-xl">
-                  <CardHeader className="p-12">
-                    <div className="flex gap-2 mb-6">
+                <Card className="border-0 shadow-2xl rounded-3xl">
+                  <CardHeader className="p-16">
+                    <div className="flex gap-3 mb-8 justify-center">
                       {[...Array(review.rating)].map((_, i) => (
-                        <Icon key={i} name="Star" className="text-yellow-500 fill-yellow-500" size={32} />
+                        <Icon key={i} name="Star" className="text-yellow-500 fill-yellow-500" size={48} />
                       ))}
                     </div>
-                    <CardDescription className="text-2xl text-gray-700 italic leading-relaxed mb-6">
+                    <CardDescription className="text-3xl text-gray-700 italic leading-relaxed mb-8 text-center">
                       "{review.text}"
                     </CardDescription>
-                    <CardTitle className="text-turquoise text-2xl">— {review.name}</CardTitle>
+                    <CardTitle className="text-turquoise text-3xl text-center">— {review.name}</CardTitle>
                   </CardHeader>
                 </Card>
               </CarouselItem>
