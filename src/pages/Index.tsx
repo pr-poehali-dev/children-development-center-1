@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -17,6 +17,7 @@ import { Separator } from '@/components/ui/separator';
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [selectedServices, setSelectedServices] = useState<Record<string, number>>({});
 
   const services = [
     { title: 'Мини-сад', age: 'от 3 лет, Пн/Ср/Пт 9:00-13:00', icon: 'Home', color: 'bg-turquoise/20' },
@@ -31,12 +32,12 @@ const Index = () => {
   ];
 
   const teachers = [
-    { name: 'Ольга Анатольевна', role: 'Педагог мини-сада и подготовки к школе', experience: '15+ лет опыта', image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Olga' },
-    { name: 'Лилия Николаевна', role: 'Педагог раннего развития', experience: '10+ лет опыта', image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Liliya' },
-    { name: 'Елизавета Сергеевна', role: 'Логопед', experience: '8+ лет опыта', image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Elizaveta' },
-    { name: 'Надежда Сергеевна', role: 'Педагог развивающих занятий', experience: '12+ лет опыта', image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Nadezhda' },
-    { name: 'Алина Сергеевна', role: 'Преподаватель английского', experience: '9+ лет опыта', image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Alina' },
-    { name: 'Татьяна Петровна', role: 'Педагог по рисованию', experience: '14+ лет опыта', image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Tatyana' },
+    { name: 'Ольга Анатольевна', role: 'Педагог мини-сада и подготовки к школе', experience: '15+ лет опыта', image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop' },
+    { name: 'Лилия Николаевна', role: 'Педагог раннего развития', experience: '10+ лет опыта', image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop' },
+    { name: 'Елизавета Сергеевна', role: 'Логопед', experience: '8+ лет опыта', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop' },
+    { name: 'Надежда Сергеевна', role: 'Педагог развивающих занятий', experience: '12+ лет опыта', image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop' },
+    { name: 'Алина Сергеевна', role: 'Преподаватель английского', experience: '9+ лет опыта', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop' },
+    { name: 'Татьяна Петровна', role: 'Педагог по рисованию', experience: '14+ лет опыта', image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop' },
   ];
 
   const reviews = [
@@ -56,14 +57,34 @@ const Index = () => {
     { day: 'Воскресенье', classes: 'Английский язык 1 класс (10:00-11:30)' },
   ];
 
-  const gallery = [
-    'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800',
-    'https://images.unsplash.com/photo-1587616211892-cc1b8faec8d4?w=800',
-    'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=800',
-    'https://images.unsplash.com/photo-1560421683-6856ea585c78?w=800',
-    'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=800',
-    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800',
+  const servicesPricing = [
+    { id: 'mini-sad', title: 'Мини-сад', price: 3500, unit: 'мес' },
+    { id: 'mama', title: 'Вместе с мамой', price: 2500, unit: 'мес' },
+    { id: 'govorushki', title: 'Говорушки', price: 2000, unit: 'мес' },
+    { id: 'uchus', title: 'Учусь, играя', price: 2800, unit: 'мес' },
+    { id: 'shkola', title: 'Скоро в школу', price: 2400, unit: 'мес' },
+    { id: 'english', title: 'Английский язык', price: 3000, unit: 'мес' },
+    { id: 'risovanie', title: 'Рисование', price: 1600, unit: 'мес' },
+    { id: 'master', title: 'Мастер-класс', price: 1600, unit: 'мес' },
+    { id: 'express', title: 'Экспресс-курс', price: 2200, unit: 'мес' },
   ];
+
+  const totalCost = useMemo(() => {
+    return Object.entries(selectedServices).reduce((sum, [id, count]) => {
+      const service = servicesPricing.find(s => s.id === id);
+      return sum + (service ? service.price * count : 0);
+    }, 0);
+  }, [selectedServices]);
+
+  const handleServiceChange = (id: string, value: number) => {
+    if (value <= 0) {
+      const newServices = { ...selectedServices };
+      delete newServices[id];
+      setSelectedServices(newServices);
+    } else {
+      setSelectedServices({ ...selectedServices, [id]: value });
+    }
+  };
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -87,7 +108,7 @@ const Index = () => {
             </div>
             
             <div className="hidden md:flex gap-8">
-              {['Главная', 'Галерея', 'Преподаватели', 'Расписание', 'Отзывы', 'Контакты'].map((item) => (
+              {['Главная', 'Калькулятор', 'Преподаватели', 'Расписание', 'Отзывы', 'Контакты'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -108,7 +129,7 @@ const Index = () => {
 
           {isMenuOpen && (
             <div className="md:hidden pb-4 animate-fade-in">
-              {['Главная', 'Галерея', 'Преподаватели', 'Расписание', 'Отзывы', 'Контакты'].map((item) => (
+              {['Главная', 'Калькулятор', 'Преподаватели', 'Расписание', 'Отзывы', 'Контакты'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -190,27 +211,66 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="галерея" className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
+      <section id="калькулятор" className="py-20 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">Галерея</h2>
-            <p className="text-xl text-gray-600">Моменты радости и развития</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">Калькулятор услуг</h2>
+            <p className="text-xl text-gray-600">Рассчитайте стоимость занятий для вашего ребёнка</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {gallery.map((img, index) => (
-              <div 
-                key={index} 
-                className="relative overflow-hidden rounded-3xl shadow-lg hover-scale group"
-              >
-                <img 
-                  src={img} 
-                  alt={`Галерея ${index + 1}`}
-                  className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <Card className="border-0 shadow-xl">
+            <CardHeader>
+              <CardTitle className="text-navy text-2xl">Выберите занятия</CardTitle>
+              <CardDescription>Укажите количество занятий в месяц</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                {servicesPricing.map((service) => (
+                  <div key={service.id} className="flex items-center justify-between p-4 rounded-xl bg-turquoise/5 hover:bg-turquoise/10 transition-colors">
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-navy">{service.title}</h3>
+                      <p className="text-sm text-gray-600">{service.price} ₽/{service.unit}</p>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => handleServiceChange(service.id, (selectedServices[service.id] || 0) - 1)}
+                        disabled={!selectedServices[service.id]}
+                        className="h-8 w-8 p-0"
+                      >
+                        <Icon name="Minus" size={16} />
+                      </Button>
+                      <span className="w-8 text-center font-semibold">{selectedServices[service.id] || 0}</span>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => handleServiceChange(service.id, (selectedServices[service.id] || 0) + 1)}
+                        className="h-8 w-8 p-0"
+                      >
+                        <Icon name="Plus" size={16} />
+                      </Button>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+              <Separator className="my-6" />
+              <div className="flex items-center justify-between p-6 rounded-xl bg-coral/10">
+                <div>
+                  <p className="text-sm text-gray-600 mb-1">Итого к оплате</p>
+                  <p className="text-3xl font-bold text-coral">{totalCost.toLocaleString()} ₽</p>
+                </div>
+                <Button 
+                  size="lg" 
+                  className="bg-coral hover:bg-coral/90 text-white"
+                  onClick={() => scrollToSection('контакты')}
+                  disabled={totalCost === 0}
+                >
+                  Записаться
+                  <Icon name="ArrowRight" className="ml-2" size={20} />
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
@@ -261,7 +321,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="отзывы" className="py-20 px-4 bg-gradient-to-br from-pink-50 to-yellow-50">
+      <section id="отзывы" className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">Отзывы</h2>
@@ -275,7 +335,7 @@ const Index = () => {
                     <CardHeader>
                       <div className="flex gap-1 mb-4">
                         {[...Array(review.rating)].map((_, i) => (
-                          <Icon key={i} name="Star" className="text-yellow-400 fill-yellow-400" size={20} />
+                          <Icon key={i} name="Star" className="text-yellow-500 fill-yellow-500" size={24} />
                         ))}
                       </div>
                       <CardDescription className="text-lg text-gray-700 italic">
@@ -369,7 +429,7 @@ const Index = () => {
 
           <div className="mt-12 rounded-3xl overflow-hidden shadow-2xl h-96">
             <iframe
-              src="https://yandex.ru/map-widget/v1/?ll=48.389347%2C54.316821&z=17&l=map&pt=48.389347,54.316821,pm2rdm"
+              src="https://yandex.ru/map-widget/v1/?ll=48.413845%2C54.335877&z=17&l=map&pt=48.413845,54.335877,pm2rdm"
               width="100%"
               height="100%"
               frameBorder="0"
