@@ -7,7 +7,7 @@ interface NavigationProps {
 
 const Navigation = ({ scrollToSection }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuItems = ['Главная', 'Калькулятор', 'Преподаватели', 'Расписание', 'Отзывы', 'Контакты'];
+  const menuItems = ['Главная', 'Преподаватели', 'Расписание', 'Отзывы', 'Контакты'];
 
   return (
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
