@@ -78,33 +78,33 @@ const schedule: ScheduleDay[] = [
 
 const ScheduleSection = () => {
   return (
-    <section id="расписание" className="min-h-screen flex items-center py-20 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">Расписание</h2>
-          <p className="text-xl text-gray-600">График работы и занятий</p>
+    <section id="расписание" className="min-h-screen flex items-center py-20 px-8">
+      <div className="max-w-[1800px] mx-auto w-full">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy mb-6">Расписание</h2>
+          <p className="text-2xl lg:text-3xl text-gray-600">График работы и занятий</p>
         </div>
-        <div className="grid gap-6 max-w-6xl mx-auto">
+        <div className="grid gap-10 w-full">
           {schedule.map((item, index) => (
             <Card key={index} className="border-0 shadow-xl overflow-hidden hover-scale">
-              <div className="bg-gradient-to-r from-coral to-coral/80 px-6 py-4">
-                <CardTitle className="text-white text-2xl font-bold">{item.day}</CardTitle>
+              <div className="bg-gradient-to-r from-coral to-coral/80 px-10 py-8">
+                <CardTitle className="text-white text-4xl font-bold">{item.day}</CardTitle>
               </div>
-              <CardContent className="p-6">
-                <div className="space-y-4">
+              <CardContent className="p-10">
+                <div className="grid gap-8">
                   {item.classes.map((cls, clsIndex) => (
-                    <div key={clsIndex} className="flex gap-4 p-4 rounded-xl bg-turquoise/5 hover:bg-turquoise/10 transition-colors">
-                      <div className="text-3xl flex-shrink-0">{cls.emoji}</div>
-                      <div className="flex-1 space-y-1">
-                        <div className="flex items-start justify-between gap-4 flex-wrap">
-                          <div>
-                            <h3 className="font-bold text-navy text-lg">{cls.name}</h3>
-                            <p className="text-sm text-gray-600">Возраст: {cls.age}</p>
+                    <div key={clsIndex} className="flex gap-8 p-8 rounded-2xl bg-turquoise/5 hover:bg-turquoise/10 transition-colors">
+                      <div className="text-6xl flex-shrink-0">{cls.emoji}</div>
+                      <div className="flex-1 space-y-3">
+                        <div className="flex items-start justify-between gap-6 flex-wrap">
+                          <div className="flex-1">
+                            <h3 className="font-bold text-navy text-3xl mb-3">{cls.name}</h3>
+                            <p className="text-xl text-gray-600">Возраст: {cls.age}</p>
                           </div>
-                          <Badge className="bg-coral/20 text-coral border-coral">{cls.time}</Badge>
+                          <Badge className="bg-coral/20 text-coral border-coral text-xl px-8 py-3">{cls.time}</Badge>
                         </div>
-                        <p className="text-sm text-gray-700"><span className="font-semibold">Педагог:</span> {cls.teacher}</p>
-                        <p className="text-sm font-semibold text-turquoise">{cls.price}</p>
+                        <p className="text-xl text-gray-700"><span className="font-semibold">Педагог:</span> {cls.teacher}</p>
+                        <p className="text-xl font-semibold text-turquoise">{cls.price}</p>
                       </div>
                     </div>
                   ))}
