@@ -7,9 +7,9 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto text-center">
         <div className="flex items-center justify-center gap-3 mb-6">
           <img 
-            src="https://cdn.poehali.dev/files/13f31caa-2f75-4aab-832c-441571e7555e.png" 
+            src="https://cdn.poehali.dev/files/bbf5d23e-af22-423b-b468-ca3bf9d98113.png" 
             alt="Мажорик логотип"
-            className="h-20 sm:h-24 w-auto object-contain"
+            className="h-24 sm:h-28 w-auto object-contain"
           />
         </div>
         <p className="text-white/90 mb-2 text-base sm:text-lg">Детский центр в Ульяновске</p>
