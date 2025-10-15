@@ -78,33 +78,33 @@ const schedule: ScheduleDay[] = [
 
 const ScheduleSection = () => {
   return (
-    <section id="расписание" className="py-20 px-4">
+    <section id="расписание" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">Расписание</h2>
-          <p className="text-xl text-gray-600">График работы и занятий</p>
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-3 sm:mb-4">Расписание</h2>
+          <p className="text-lg sm:text-xl text-gray-600">График работы и занятий</p>
         </div>
         <div className="grid gap-6 max-w-6xl mx-auto">
           {schedule.map((item, index) => (
             <Card key={index} className="border-0 shadow-xl overflow-hidden hover-scale">
-              <div className="bg-gradient-to-r from-coral to-coral/80 px-6 py-4">
-                <CardTitle className="text-white text-2xl font-bold">{item.day}</CardTitle>
+              <div className="bg-gradient-to-r from-coral to-coral/80 px-4 sm:px-6 py-3 sm:py-4">
+                <CardTitle className="text-white text-xl sm:text-2xl font-bold">{item.day}</CardTitle>
               </div>
-              <CardContent className="p-6">
+              <CardContent className="p-4 sm:p-6">
                 <div className="space-y-4">
                   {item.classes.map((cls, clsIndex) => (
-                    <div key={clsIndex} className="flex gap-4 p-4 rounded-xl bg-turquoise/5 hover:bg-turquoise/10 transition-colors">
-                      <div className="text-3xl flex-shrink-0">{cls.emoji}</div>
+                    <div key={clsIndex} className="flex gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-turquoise/5 hover:bg-turquoise/10 transition-colors">
+                      <div className="text-2xl sm:text-3xl flex-shrink-0">{cls.emoji}</div>
                       <div className="flex-1 space-y-1">
                         <div className="flex items-start justify-between gap-4 flex-wrap">
                           <div>
-                            <h3 className="font-bold text-navy text-lg">{cls.name}</h3>
-                            <p className="text-sm text-gray-600">Возраст: {cls.age}</p>
+                            <h3 className="font-bold text-navy text-base sm:text-lg">{cls.name}</h3>
+                            <p className="text-xs sm:text-sm text-gray-600">Возраст: {cls.age}</p>
                           </div>
-                          <Badge className="bg-coral/20 text-coral border-coral">{cls.time}</Badge>
+                          <Badge className="bg-coral/20 text-coral border-coral text-xs sm:text-sm">{cls.time}</Badge>
                         </div>
-                        <p className="text-sm text-gray-700"><span className="font-semibold">Педагог:</span> {cls.teacher}</p>
-                        <p className="text-sm font-semibold text-turquoise">{cls.price}</p>
+                        <p className="text-xs sm:text-sm text-gray-700"><span className="font-semibold">Педагог:</span> {cls.teacher}</p>
+                        <p className="text-xs sm:text-sm font-semibold text-turquoise">{cls.price}</p>
                       </div>
                     </div>
                   ))}

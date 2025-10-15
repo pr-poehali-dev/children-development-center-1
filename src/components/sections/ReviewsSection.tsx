@@ -16,8 +16,8 @@ const reviews = [
   { name: 'Сергей Л.', text: 'Отдали дочку на английский язык — результаты превзошли ожидания! Уже через месяц начала говорить простые фразы. Занятия проходят в игровой форме, ребёнку очень нравится!', rating: 5 },
 ];
 
-const StarIcon = () => (
-  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+const StarIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" 
           fill="#FFD700" stroke="#FFA500" strokeWidth="1" strokeLinejoin="round"/>
   </svg>
@@ -25,27 +25,27 @@ const StarIcon = () => (
 
 const ReviewsSection = () => {
   return (
-    <section id="отзывы" className="min-h-screen flex items-center py-20 px-8">
+    <section id="отзывы" className="min-h-screen flex items-center py-16 sm:py-20 px-4 sm:px-8">
       <div className="max-w-7xl mx-auto w-full">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy mb-6">Отзывы</h2>
-          <p className="text-2xl lg:text-3xl text-gray-600">Что говорят родители</p>
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-navy mb-4 sm:mb-6">Отзывы</h2>
+          <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-gray-600">Что говорят родители</p>
         </div>
         <Carousel className="max-w-6xl mx-auto">
           <CarouselContent>
             {reviews.map((review, index) => (
               <CarouselItem key={index}>
-                <Card className="border-0 shadow-2xl rounded-3xl">
-                  <CardHeader className="p-16">
-                    <div className="flex gap-3 mb-8 justify-center">
+                <Card className="border-0 shadow-2xl rounded-2xl sm:rounded-3xl">
+                  <CardHeader className="p-6 sm:p-10 lg:p-16">
+                    <div className="flex gap-2 sm:gap-3 mb-6 sm:mb-8 justify-center">
                       {[...Array(review.rating)].map((_, i) => (
-                        <StarIcon key={i} />
+                        <StarIcon key={i} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
                       ))}
                     </div>
-                    <CardDescription className="text-3xl text-gray-700 italic leading-relaxed mb-8 text-center">
+                    <CardDescription className="text-base sm:text-xl lg:text-2xl xl:text-3xl text-gray-700 italic leading-relaxed mb-6 sm:mb-8 text-center">
                       "{review.text}"
                     </CardDescription>
-                    <CardTitle className="text-turquoise text-3xl text-center">— {review.name}</CardTitle>
+                    <CardTitle className="text-turquoise text-xl sm:text-2xl lg:text-3xl text-center">— {review.name}</CardTitle>
                   </CardHeader>
                 </Card>
               </CarouselItem>

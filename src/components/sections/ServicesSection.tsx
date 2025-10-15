@@ -15,11 +15,11 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-navy mb-4">Наши занятия</h2>
-          <p className="text-xl text-gray-600">Развивающие программы для каждого ребёнка</p>
+        <div className="text-center mb-12 sm:mb-16 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-3 sm:mb-4">Наши занятия</h2>
+          <p className="text-lg sm:text-xl text-gray-600">Развивающие программы для каждого ребёнка</p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
@@ -28,12 +28,12 @@ const ServicesSection = () => {
               className="hover-scale border-0 shadow-lg overflow-hidden"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className={`h-32 ${service.color} flex items-center justify-center`}>
-                <Icon name={service.icon} size={48} className="text-turquoise" />
+              <div className={`h-24 sm:h-32 ${service.color} flex items-center justify-center`}>
+                <Icon name={service.icon} size={40} className="text-turquoise sm:w-12 sm:h-12" />
               </div>
-              <CardHeader>
-                <CardTitle className="text-navy">{service.title}</CardTitle>
-                <CardDescription className="text-base leading-relaxed">{service.age}</CardDescription>
+              <CardHeader className="p-4 sm:p-6">
+                <CardTitle className="text-navy text-lg sm:text-xl">{service.title}</CardTitle>
+                <CardDescription className="text-sm sm:text-base leading-relaxed">{service.age}</CardDescription>
               </CardHeader>
             </Card>
           ))}
