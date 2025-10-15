@@ -9,7 +9,7 @@ const Footer = () => {
           <img 
             src="https://cdn.poehali.dev/files/bbf5d23e-af22-423b-b468-ca3bf9d98113.png" 
             alt="Мажорик логотип"
-            className="h-72 sm:h-84 w-auto object-contain"
+            className="h-24 sm:h-28 w-auto object-contain"
           />
         </div>
         <p className="text-white/90 mb-2 text-base sm:text-lg">Детский центр в Ульяновске</p>
