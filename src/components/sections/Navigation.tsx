@@ -15,7 +15,7 @@ const Navigation = ({ scrollToSection }: NavigationProps) => {
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center gap-3">
             <img 
-              src="https://cdn.poehali.dev/files/1f009f4b-27a1-47f2-8814-77f63bc265d3.png" 
+              src="https://cdn.poehali.dev/files/bbf5d23e-af22-423b-b468-ca3bf9d98113.png" 
               alt="Мажорик логотип"
               className="h-20 w-auto object-contain"
             />
