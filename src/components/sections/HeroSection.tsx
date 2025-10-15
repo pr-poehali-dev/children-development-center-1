@@ -42,7 +42,7 @@ const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
           <div className="relative h-screen hidden lg:flex items-center justify-center p-12">
             <div className="absolute inset-0 bg-gradient-to-br from-turquoise/20 to-coral/20 blur-3xl opacity-40"></div>
             <img 
-              src="https://cdn.poehali.dev/files/1c72f9f8-3447-4558-ad69-fd2914cbae05.png" 
+              src="https://cdn.poehali.dev/files/6a70dd5c-bccb-400d-a115-0752b393c1ce.png" 
               alt="Ребёнок с книгами" 
               className="w-full h-auto max-h-[85vh] drop-shadow-2xl animate-scale-in object-contain"
             />
