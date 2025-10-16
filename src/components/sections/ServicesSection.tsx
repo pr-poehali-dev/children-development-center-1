@@ -100,7 +100,7 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className={`hover-scale border-0 shadow-lg overflow-hidden bg-gradient-to-br ${service.bgColor} relative group cursor-pointer transition-transform duration-300`}
+              className={`hover-scale border-0 shadow-lg overflow-hidden !bg-gradient-to-br ${service.bgColor} relative group cursor-pointer transition-transform duration-300`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="relative h-48 sm:h-56 flex flex-col items-start justify-start p-6 overflow-hidden">

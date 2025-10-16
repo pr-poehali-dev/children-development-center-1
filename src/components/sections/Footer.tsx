@@ -19,7 +19,7 @@ const Footer = ({ scrollToSection }: FooterProps) => {
         </div>
         <p className="text-white/90 mb-2 text-base sm:text-lg">Детский центр в Ульяновске</p>
         <p className="text-white/90 mb-1 text-sm sm:text-base lg:text-lg">г. Ульяновск, Новый город, ул. Карбышева, 49</p>
-        <p className="text-white/90 mb-4 text-sm sm:text-base lg:text-lg">г. Ульяновск, Кашубы, 4к1</p>
+        <p className="text-white/90 mb-4 text-sm sm:text-base lg:text-lg">г. Ульяновск, Новый город, Кашубы, 4к1</p>
         <Separator className="my-6 bg-white/30" />
         <div className="flex items-center justify-center gap-4 sm:gap-6 mb-4">
           <Link to="/privacy" className="text-white/90 hover:text-white transition-colors text-sm sm:text-base lg:text-lg underline">
