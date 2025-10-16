@@ -103,7 +103,7 @@ const ServicesSection = () => {
               className={`hover-scale border-0 shadow-lg overflow-hidden !bg-gradient-to-br ${service.bgColor} relative group cursor-pointer transition-transform duration-300`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="relative h-48 sm:h-56 flex flex-col items-start justify-start p-6 overflow-hidden">
+              <div className="relative h-48 sm:h-56 flex flex-col items-start justify-start p-6 overflow-hidden bg-yellow-500">
                 <div className={`absolute bottom-4 right-4 w-32 h-32 sm:w-40 sm:h-40 ${service.circleColor} rounded-full blur-2xl`}></div>
                 <div className="absolute bottom-2 left-2 w-4 h-4 bg-white/30 rounded-full"></div>
                 <div className="relative z-10 text-left">
