@@ -13,11 +13,11 @@ const Navigation = ({ scrollToSection }: NavigationProps) => {
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-28">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 ml-[10%]">
             <img 
               src="https://cdn.poehali.dev/files/d6d4a00a-f308-4b62-a0e7-86b6552a12a3.png" 
               alt="Мажорик логотип"
-              className="h-28 w-auto object-contain py-2"
+              className="h-24 w-auto object-contain py-2"
             />
           </div>
           
