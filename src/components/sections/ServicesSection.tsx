@@ -17,13 +17,6 @@ const services = [
     circleColor: 'bg-teal-300/40'
   },
   { 
-    title: 'Вместе с мамой', 
-    subtitle: '',
-    icon: 'Heart', 
-    bgColor: 'from-yellow-400 to-yellow-500',
-    circleColor: 'bg-yellow-300/40'
-  },
-  { 
     title: 'Учусь, играя', 
     subtitle: '(от 4-6 лет)',
     icon: 'Gamepad2', 
@@ -59,25 +52,11 @@ const services = [
     circleColor: 'bg-teal-300/40'
   },
   { 
-    title: 'Рисование + Мастер класс', 
-    subtitle: '',
-    icon: 'Palette', 
-    bgColor: 'from-yellow-400 to-yellow-500',
-    circleColor: 'bg-yellow-300/40'
-  },
-  { 
     title: 'Арт-терапия', 
     subtitle: '',
     icon: 'Paintbrush', 
     bgColor: 'from-orange-500 to-orange-600',
     circleColor: 'bg-orange-400/40'
-  },
-  { 
-    title: 'Психолог', 
-    subtitle: '',
-    icon: 'User', 
-    bgColor: 'from-sky-400 to-sky-500',
-    circleColor: 'bg-sky-300/40'
   },
   { 
     title: 'Няня на час', 
