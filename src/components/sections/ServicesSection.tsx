@@ -86,20 +86,6 @@ const services = [
     bgColor: 'from-indigo-500 to-indigo-600',
     circleColor: 'bg-indigo-400/40'
   },
-  { 
-    title: 'Вместе с мамой', 
-    subtitle: '',
-    icon: 'Heart', 
-    bgColor: 'from-yellow-400 to-yellow-500',
-    circleColor: 'bg-yellow-300/40'
-  },
-  { 
-    title: 'Рисование + Мастер класс', 
-    subtitle: '',
-    icon: 'Palette', 
-    bgColor: 'from-yellow-400 to-yellow-500',
-    circleColor: 'bg-yellow-300/40'
-  },
 ];
 
 const ServicesSection = () => {
