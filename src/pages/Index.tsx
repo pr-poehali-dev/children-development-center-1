@@ -1,7 +1,6 @@
 import Navigation from '@/components/sections/Navigation';
 import HeroSection from '@/components/sections/HeroSection';
 import ServicesSection from '@/components/sections/ServicesSection';
-import TeachersSection from '@/components/sections/TeachersSection';
 import ScheduleSection from '@/components/sections/ScheduleSection';
 import ReviewsSection from '@/components/sections/ReviewsSection';
 import ContactSection from '@/components/sections/ContactSection';
@@ -21,7 +20,6 @@ const Index = () => {
       <HeroSection scrollToSection={scrollToSection} />
       <ServicesSection />
       <ScheduleSection />
-      <TeachersSection />
       <ReviewsSection />
       <ContactSection />
       <Footer scrollToSection={scrollToSection} />
