@@ -3,8 +3,44 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
+import { useState } from 'react';
 
 const ContactSection = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get('name') as string;
+    const phone = formData.get('phone') as string;
+    const message = formData.get('message') as string;
+
+    const telegramMessage = message 
+      ? `Новая заявка:\nИмя: ${name}\nТелефон: ${phone}\nСообщение: ${message}`
+      : `Новая заявка:\nИмя: ${name}\nТелефон: ${phone}`;
+
+    const token = '7788272864:AAEbLQOm8JYkuvdDY4i-E9zqg1w0R-txaqA';
+    const chatId = '735054458';
+    const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(telegramMessage)}`;
+
+    try {
+      const response = await fetch(url);
+      if (response.ok) {
+        alert('Заявка отправлена!');
+        e.currentTarget.reset();
+      } else {
+        alert('Ошибка при отправке заявки.');
+      }
+    } catch (error) {
+      console.error('Ошибка:', error);
+      alert('Ошибка при отправке заявки.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="контакты" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-turquoise/10 to-cyan/10">
       <div className="max-w-7xl mx-auto">
@@ -18,18 +54,18 @@ const ContactSection = () => {
               <CardTitle className="text-navy text-xl sm:text-2xl">Оставить заявку</CardTitle>
             </CardHeader>
             <CardContent className="p-4 sm:p-6">
-              <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); alert('Спасибо! Мы скоро свяжемся с вами.'); }}>
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>
-                  <Input placeholder="Ваше имя" className="h-11 sm:h-12" required />
+                  <Input name="name" placeholder="Ваше имя" className="h-11 sm:h-12" required />
                 </div>
                 <div>
-                  <Input type="tel" placeholder="Телефон" className="h-11 sm:h-12" required />
+                  <Input name="phone" type="tel" placeholder="Телефон" className="h-11 sm:h-12" required />
                 </div>
                 <div>
-                  <Textarea placeholder="Сообщение (необязательно)" rows={4} />
+                  <Textarea name="message" placeholder="Сообщение (необязательно)" rows={4} />
                 </div>
-                <Button type="submit" className="w-full bg-coral hover:bg-coral/90 h-11 sm:h-12 text-base sm:text-lg">
-                  Отправить заявку
+                <Button type="submit" className="w-full bg-coral hover:bg-coral/90 h-11 sm:h-12 text-base sm:text-lg" disabled={isSubmitting}>
+                  {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
                 </Button>
               </form>
             </CardContent>
