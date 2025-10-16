@@ -44,7 +44,7 @@ const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
             <img 
               src="https://cdn.poehali.dev/files/6a70dd5c-bccb-400d-a115-0752b393c1ce.png" 
               alt="Ребёнок с книгами" 
-              className="w-full h-auto max-h-[85vh] drop-shadow-2xl animate-scale-in object-contain"
+              className="w-4/5 h-auto max-h-[70vh] drop-shadow-2xl animate-scale-in object-contain"
             />
           </div>
         </div>

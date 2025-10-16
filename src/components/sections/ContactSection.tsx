@@ -82,7 +82,7 @@ const ContactSection = () => {
 
         <div className="mt-8 sm:mt-12 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl h-64 sm:h-80 lg:h-96">
           <iframe
-            src="https://yandex.ru/map-widget/v1/?ll=48.413845%2C54.335877&z=17&l=map&pt=48.413845,54.335877,pm2rdm"
+            src="https://yandex.ru/map-widget/v1/?ll=48.390000%2C54.350000&z=17&l=map&pt=48.390000,54.350000,pm2rdm"
             width="100%"
             height="100%"
             frameBorder="0"
