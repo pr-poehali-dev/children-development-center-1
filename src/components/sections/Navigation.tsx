@@ -17,7 +17,7 @@ const Navigation = ({ scrollToSection }: NavigationProps) => {
             <img 
               src="https://cdn.poehali.dev/files/bbf5d23e-af22-423b-b468-ca3bf9d98113.png" 
               alt="Мажорик логотип"
-              className="h-24 w-auto object-contain"
+              className="h-28 w-auto object-contain py-2"
             />
           </div>
           
