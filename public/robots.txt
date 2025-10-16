@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://children-development-center-1.poehali.dev/sitemap.xml

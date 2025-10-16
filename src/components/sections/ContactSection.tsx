@@ -84,10 +84,10 @@ const ContactSection = () => {
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-turquoise/20 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Icon name="MapPin" className="text-turquoise" size={20} />
                   </div>
-                  <div>
+                  <div itemScope itemType="https://schema.org/PostalAddress">
                     <CardTitle className="text-navy text-base sm:text-lg">Адреса</CardTitle>
                     <CardDescription className="mt-1 sm:mt-2 text-sm sm:text-base whitespace-nowrap">
-                      г. Ульяновск, Новый город, ул. Карбышева, 49<br />
+                      <span itemProp="addressLocality">г. Ульяновск</span>, Новый город, <span itemProp="streetAddress">ул. Карбышева, 49</span><br />
                       г. Ульяновск, ул. Генерала Кашубы, 4к2
                     </CardDescription>
                   </div>
@@ -103,7 +103,9 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <CardTitle className="text-navy text-base sm:text-lg">Телефон</CardTitle>
-                    <CardDescription className="mt-1 sm:mt-2 text-sm sm:text-base">+7 908 479 58 63</CardDescription>
+                    <CardDescription className="mt-1 sm:mt-2 text-sm sm:text-base">
+                      <a href="tel:+79084795863" itemProp="telephone">+7 908 479 58 63</a>
+                    </CardDescription>
                   </div>
                 </div>
               </CardHeader>

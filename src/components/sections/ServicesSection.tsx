@@ -69,7 +69,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="услуги" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-3 sm:mb-4">Наши занятия</h2>
@@ -77,8 +77,10 @@ const ServicesSection = () => {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <div
+            <article
               key={index} 
+              itemScope
+              itemType="https://schema.org/Service"
               className={`hover-scale border-0 shadow-lg overflow-hidden rounded-lg bg-gradient-to-br ${service.bgColor} relative group cursor-pointer transition-transform duration-300`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
@@ -86,7 +88,7 @@ const ServicesSection = () => {
                 <div className={`absolute bottom-4 right-4 w-32 h-32 sm:w-40 sm:h-40 ${service.circleColor} rounded-full blur-2xl`}></div>
                 <div className="absolute bottom-2 left-2 w-4 h-4 bg-white/30 rounded-full"></div>
                 <div className="relative z-10 text-left">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 leading-tight">
+                  <h3 itemProp="name" className="text-xl sm:text-2xl font-bold text-white mb-1 leading-tight">
                     {service.title}
                   </h3>
                   {service.subtitle && (
@@ -99,7 +101,7 @@ const ServicesSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
