@@ -30,7 +30,7 @@ const ContactSection = () => {
       : `Новая заявка:\nИмя: ${name}\nТелефон: ${phone}`;
 
     const token = '7788272864:AAEbLQOm8JYkuvdDY4i-E9zqg1w0R-txaqA';
-    const chatId = '735054458';
+    const chatId = '-1002490857796';
     const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(telegramMessage)}`;
 
     try {
@@ -85,9 +85,9 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <CardTitle className="text-navy text-base sm:text-lg">Адреса</CardTitle>
-                    <CardDescription className="mt-1 sm:mt-2 text-sm sm:text-base">
-                      1. г. Ульяновск, Новый город, ул. Карбышева, 49<br />
-                      2. г. Ульяновск, ул. Генерала Кашубы, 4к2
+                    <CardDescription className="mt-1 sm:mt-2 text-sm sm:text-base whitespace-nowrap">
+                      г. Ульяновск, Новый город, ул. Карбышева, 49<br />
+                      г. Ульяновск, ул. Генерала Кашубы, 4к2
                     </CardDescription>
                   </div>
                 </div>
