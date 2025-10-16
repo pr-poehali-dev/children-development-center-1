@@ -14,7 +14,7 @@ const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
           <div className="space-y-8 lg:space-y-10 animate-fade-in px-6 sm:px-8 lg:px-16 xl:px-24 py-12">
             <Badge className="bg-turquoise/20 text-navy border-turquoise text-base sm:text-lg lg:text-xl px-6 sm:px-8 py-2 sm:py-3">Детский центр в Ульяновске</Badge>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-navy leading-[1.1]">
-              Занятия для детей от 1 года
+              Занятия для детей от 1 года в Новом городе
             </h1>
             <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-gray-600 leading-relaxed">
               Мини-сад, раннее развитие, английский и другие программы. 
