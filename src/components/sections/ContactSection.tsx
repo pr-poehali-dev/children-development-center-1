@@ -4,9 +4,17 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 import { useState } from 'react';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -28,14 +36,11 @@ const ContactSection = () => {
     try {
       const response = await fetch(url);
       if (response.ok) {
-        alert('Заявка отправлена!');
+        setShowSuccessModal(true);
         e.currentTarget.reset();
-      } else {
-        alert('Ошибка при отправке заявки.');
       }
     } catch (error) {
       console.error('Ошибка:', error);
-      alert('Ошибка при отправке заявки.');
     } finally {
       setIsSubmitting(false);
     }
@@ -150,6 +155,22 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
+
+      <Dialog open={showSuccessModal} onOpenChange={setShowSuccessModal}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-2xl text-center text-navy">Ваша заявка успешно принята!</DialogTitle>
+            <DialogDescription className="text-center text-lg pt-4">
+              Мы скоро с вами свяжемся
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-center pt-4">
+            <Button onClick={() => setShowSuccessModal(false)} className="bg-coral hover:bg-coral/90">
+              Закрыть
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
