@@ -20,8 +20,8 @@ const services = [
     title: 'Вместе с мамой', 
     subtitle: '',
     icon: 'Heart', 
-    bgColor: 'from-yellow-400 to-yellow-500',
-    circleColor: 'bg-yellow-300/40'
+    bgColor: 'from-white to-gray-50',
+    circleColor: 'bg-gray-200/40'
   },
   { 
     title: 'Учусь, играя', 
@@ -62,8 +62,8 @@ const services = [
     title: 'Рисование + Мастер класс', 
     subtitle: '',
     icon: 'Palette', 
-    bgColor: 'from-yellow-400 to-yellow-500',
-    circleColor: 'bg-yellow-300/40'
+    bgColor: 'from-white to-gray-50',
+    circleColor: 'bg-gray-200/40'
   },
   { 
     title: 'Арт-терапия', 
@@ -107,11 +107,11 @@ const ServicesSection = () => {
                 <div className={`absolute bottom-4 right-4 w-32 h-32 sm:w-40 sm:h-40 ${service.circleColor} rounded-full blur-2xl`}></div>
                 <div className="absolute bottom-2 left-2 w-4 h-4 bg-white/30 rounded-full"></div>
                 <div className="relative z-10 text-left">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 leading-tight">
+                  <h3 className={`text-xl sm:text-2xl font-bold mb-1 leading-tight ${service.bgColor.includes('white') ? 'text-gray-900' : 'text-white'}`}>
                     {service.title}
                   </h3>
                   {service.subtitle && (
-                    <p className="text-sm sm:text-base text-white/90">{service.subtitle}</p>
+                    <p className={`text-sm sm:text-base ${service.bgColor.includes('white') ? 'text-gray-700' : 'text-white/90'}`}>{service.subtitle}</p>
                   )}
                 </div>
                 <div className="absolute bottom-8 right-8 transform transition-transform duration-300 group-hover:scale-110">
