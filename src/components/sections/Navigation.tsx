@@ -11,9 +11,9 @@ const Navigation = ({ scrollToSection }: NavigationProps) => {
 
   return (
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-28">
-          <div className="flex items-center gap-3 ml-[10%]">
+          <div className="flex items-center gap-3 px-6 sm:px-8 lg:px-16 xl:px-24">
             <img 
               src="https://cdn.poehali.dev/files/d6d4a00a-f308-4b62-a0e7-86b6552a12a3.png" 
               alt="Мажорик логотип"
