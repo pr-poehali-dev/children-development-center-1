@@ -31,7 +31,8 @@ const ContactSection = () => {
 
     const token = '7788272864:AAEbLQOm8JYkuvdDY4i-E9zqg1w0R-txaqA';
     const chatId = '-1002490857796';
-    const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(telegramMessage)}`;
+    const messageThreadId = '360';
+    const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&message_thread_id=${messageThreadId}&text=${encodeURIComponent(telegramMessage)}`;
 
     try {
       const response = await fetch(url);
@@ -159,6 +160,38 @@ const ContactSection = () => {
       <Dialog open={showSuccessModal} onOpenChange={setShowSuccessModal}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
+            <div className="flex justify-center mb-4">
+              <div className="relative w-20 h-20">
+                <svg className="w-20 h-20" viewBox="0 0 100 100">
+                  <circle
+                    className="stroke-current text-mint"
+                    strokeWidth="4"
+                    fill="none"
+                    cx="50"
+                    cy="50"
+                    r="46"
+                    strokeDasharray="289"
+                    strokeDashoffset="0"
+                    style={{
+                      animation: 'circle-draw 0.6s ease-in-out forwards'
+                    }}
+                  />
+                  <path
+                    className="stroke-current text-mint"
+                    strokeWidth="4"
+                    fill="none"
+                    d="M 30 50 L 45 65 L 70 35"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeDasharray="60"
+                    strokeDashoffset="60"
+                    style={{
+                      animation: 'checkmark-draw 0.4s 0.6s ease-in-out forwards'
+                    }}
+                  />
+                </svg>
+              </div>
+            </div>
             <DialogTitle className="text-2xl text-center text-navy">Ваша заявка успешно принята!</DialogTitle>
             <DialogDescription className="text-center text-lg pt-4">
               Мы скоро с вами свяжемся
@@ -171,6 +204,24 @@ const ContactSection = () => {
           </div>
         </DialogContent>
       </Dialog>
+      <style>{`
+        @keyframes circle-draw {
+          from {
+            stroke-dashoffset: 289;
+          }
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+        @keyframes checkmark-draw {
+          from {
+            stroke-dashoffset: 60;
+          }
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+      `}</style>
     </section>
   );
 };
