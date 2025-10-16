@@ -24,7 +24,7 @@ const Index = () => {
       <TeachersSection />
       <ReviewsSection />
       <ContactSection />
-      <Footer />
+      <Footer scrollToSection={scrollToSection} />
     </div>
   );
 };

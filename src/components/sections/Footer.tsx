@@ -1,15 +1,20 @@
 import { Separator } from '@/components/ui/separator';
 import { Link } from 'react-router-dom';
 
-const Footer = () => {
+interface FooterProps {
+  scrollToSection: (id: string) => void;
+}
+
+const Footer = ({ scrollToSection }: FooterProps) => {
   return (
     <footer className="bg-coral text-white py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto text-center">
         <div className="flex items-center justify-center gap-3 mb-6">
           <img 
-            src="https://cdn.poehali.dev/files/bbf5d23e-af22-423b-b468-ca3bf9d98113.png" 
+            src="https://cdn.poehali.dev/files/ff712fea-7ace-451a-b5db-973df14b807d.png" 
             alt="Мажорик логотип"
-            className="h-72 sm:h-84 w-auto object-contain"
+            className="h-24 sm:h-32 w-auto object-contain cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => scrollToSection('главная')}
           />
         </div>
         <p className="text-white/90 mb-2 text-base sm:text-lg">Детский центр в Ульяновске</p>
