@@ -83,35 +83,34 @@ const ContactSection = () => {
           </div>
         </div>
 
-        <div className="mt-8 sm:mt-12 space-y-6">
-          <div>
-            <h3 className="text-xl sm:text-2xl font-bold text-navy mb-4">Адрес 1: ул. Карбышева, 49</h3>
-            <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl h-64 sm:h-80 lg:h-96">
-              <iframe
-                src="https://yandex.ru/map-widget/v1/?ll=48.578716%2C54.391165&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxODI0MTA5ODQxEkPQoNC-0YHRgdC40Y8sINCj0LvRjNGP0L3QvtCy0YHQuiwg0YPQu9C40YbQsCDQmtCw0YDQsdGL0YjQtdCy0LAsIDQ5IgoNnFBCQhWOkFlC&z=16.77"
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                allowFullScreen
-                style={{ position: 'relative' }}
-                title="Карта - Карбышева, 49"
-              ></iframe>
-            </div>
+        <div className="mt-8 sm:mt-12 space-y-4">
+          <h3 className="text-xl sm:text-2xl font-bold text-navy text-center">Наши адреса на карте</h3>
+          <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl h-80 sm:h-96 lg:h-[500px]">
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?ll=48.572000%2C54.376000&z=13&l=map&pt=48.578716,54.391165,pm2rdm~48.566087,54.360753,pm2gnm"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              allowFullScreen
+              style={{ position: 'relative' }}
+              title="Карта с адресами"
+            ></iframe>
           </div>
-
-          <div>
-            <h3 className="text-xl sm:text-2xl font-bold text-navy mb-4">Адрес 2: ул. Генерала Кашубы, 4к2</h3>
-            <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl h-64 sm:h-80 lg:h-96">
-              <iframe
-                src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=48.566087%2C54.360753&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgo2NTc4NzI0ODQyElDQoNC-0YHRgdC40Y8sINCj0LvRjNGP0L3QvtCy0YHQuiwg0YPQu9C40YbQsCDQk9C10L3QtdGA0LDQu9CwINCa0LDRiNGD0LHRiywgNNC6MiIKDatDQkIVanFZQg%2C%2C&z=16.77"
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                allowFullScreen
-                style={{ position: 'relative' }}
-                title="Карта - Генерала Кашубы, 4к2"
-              ></iframe>
-            </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              className="bg-turquoise hover:bg-turquoise/90 text-white"
+              onClick={() => window.open('https://yandex.ru/maps/195/ulyanovsk/house/ulitsa_karbysheva_49/YEEYcwBoTkQAQFtufX94cH1lYQ==/?ll=48.578716%2C54.391165&z=16.77', '_blank')}
+            >
+              <Icon name="Navigation" className="mr-2" size={18} />
+              Маршрут к Карбышева, 49
+            </Button>
+            <Button
+              className="bg-mint hover:bg-mint/90 text-navy"
+              onClick={() => window.open('https://yandex.ru/maps/195/ulyanovsk/house/ulitsa_generala_kashuby_4k2/YEEYcwFmSU0BQFtufX93cXtmZw==/?ll=48.566087%2C54.360753&z=16.77', '_blank')}
+            >
+              <Icon name="Navigation" className="mr-2" size={18} />
+              Маршрут к Кашубы, 4к2
+            </Button>
           </div>
         </div>
       </div>
