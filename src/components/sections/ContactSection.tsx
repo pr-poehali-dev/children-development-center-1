@@ -86,9 +86,9 @@ const ContactSection = () => {
                   </div>
                   <div itemScope itemType="https://schema.org/PostalAddress">
                     <CardTitle className="text-navy text-base sm:text-lg">Адреса</CardTitle>
-                    <CardDescription className="mt-1 sm:mt-2 text-sm sm:text-base whitespace-nowrap">
-                      <span itemProp="addressLocality">г. Ульяновск</span>, Новый город, <span itemProp="streetAddress">ул. Карбышева, 49</span><br />
-                      г. Ульяновск, ул. Генерала Кашубы, 4к2
+                    <CardDescription className="mt-1 sm:mt-2 text-sm sm:text-base">
+                      <span itemProp="addressLocality">г. Ульяновск</span>, Новый город,<br className="sm:hidden" /> <span itemProp="streetAddress">ул. Карбышева, 49</span><br />
+                      г. Ульяновск,<br className="sm:hidden" /> ул. Генерала Кашубы, 4к2
                     </CardDescription>
                   </div>
                 </div>
@@ -142,14 +142,14 @@ const ContactSection = () => {
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              className="bg-coral hover:bg-coral/90 text-white"
+              className="bg-coral hover:bg-coral/90 text-white text-sm sm:text-base w-full sm:w-auto"
               onClick={() => window.open('https://yandex.ru/maps/195/ulyanovsk/house/ulitsa_karbysheva_49/YEEYcwBoTkQAQFtufX94cH1lYQ==/?ll=48.578716%2C54.391165&z=16.77', '_blank')}
             >
               <Icon name="Navigation" className="mr-2" size={18} />
               Маршрут к Карбышева, 49
             </Button>
             <Button
-              className="bg-coral hover:bg-coral/90 text-white"
+              className="bg-coral hover:bg-coral/90 text-white text-sm sm:text-base w-full sm:w-auto"
               onClick={() => window.open('https://yandex.ru/maps/195/ulyanovsk/house/ulitsa_generala_kashuby_4k2/YEEYcwFmSU0BQFtufX93cXtmZw==/?ll=48.566087%2C54.360753&z=16.77', '_blank')}
             >
               <Icon name="Navigation" className="mr-2" size={18} />

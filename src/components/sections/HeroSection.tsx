@@ -12,27 +12,27 @@ const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
       <div className="w-full">
         <div className="grid lg:grid-cols-2 items-center">
           <div className="space-y-8 lg:space-y-10 animate-fade-in px-6 sm:px-8 lg:px-16 xl:px-24 py-12">
-            <Badge className="bg-turquoise/20 text-navy border-turquoise text-base sm:text-lg lg:text-xl px-6 sm:px-8 py-2 sm:py-3">Детский центр в Ульяновске</Badge>
-            <h1 itemProp="name" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-navy leading-[1.1]">
+            <Badge className="bg-turquoise/20 text-navy border-turquoise text-sm sm:text-base lg:text-lg xl:text-xl px-4 sm:px-6 lg:px-8 py-2 sm:py-3 whitespace-nowrap">Детский центр в Ульяновске</Badge>
+            <h1 itemProp="name" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-navy leading-tight">
               Занятия для детей от 1 года в Новом городе
             </h1>
-            <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-gray-600 leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-600 leading-relaxed">
               Мини-сад, раннее развитие, английский и другие программы. 
               Создаём пространство, где дети растут счастливыми!
             </p>
-            <div className="flex gap-4 sm:gap-6 flex-wrap">
+            <div className="flex gap-3 sm:gap-4 flex-col sm:flex-row">
               <Button 
                 size="lg" 
-                className="bg-coral hover:bg-coral/90 text-white text-base sm:text-lg lg:text-xl px-8 sm:px-12 py-6 sm:py-8 h-auto rounded-2xl"
+                className="bg-coral hover:bg-coral/90 text-white text-sm sm:text-base lg:text-lg px-6 sm:px-8 lg:px-10 py-5 sm:py-6 lg:py-7 h-auto rounded-xl sm:rounded-2xl w-full sm:w-auto"
                 onClick={() => scrollToSection('контакты')}
               >
                 Записаться на занятие
-                <Icon name="ArrowRight" className="ml-2 sm:ml-3" size={24} />
+                <Icon name="ArrowRight" className="ml-2" size={20} />
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
-                className="text-base sm:text-lg lg:text-xl px-8 sm:px-12 py-6 sm:py-8 h-auto rounded-2xl border-2"
+                className="text-sm sm:text-base lg:text-lg px-6 sm:px-8 lg:px-10 py-5 sm:py-6 lg:py-7 h-auto rounded-xl sm:rounded-2xl border-2 w-full sm:w-auto"
                 onClick={() => scrollToSection('расписание')}
               >
                 Посмотреть расписание
