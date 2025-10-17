@@ -54,8 +54,8 @@ const ContactSection = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-3 sm:mb-4">Контакты</h2>
           <p className="text-lg sm:text-xl text-gray-600">Оставьте заявку, и мы свяжемся с вами</p>
         </div>
-        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          <Card className="border-0 shadow-xl">
+        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto justify-items-center">
+          <Card className="border-0 shadow-xl w-full max-w-lg">
             <CardHeader className="p-4 sm:p-6">
               <CardTitle className="text-navy text-xl sm:text-2xl">Оставить заявку</CardTitle>
             </CardHeader>
@@ -77,7 +77,7 @@ const ContactSection = () => {
             </CardContent>
           </Card>
 
-          <div className="space-y-6">
+          <div className="space-y-6 w-full max-w-lg">
             <Card className="border-0 shadow-lg">
               <CardHeader className="p-4 sm:p-6">
                 <div className="flex items-start gap-3 sm:gap-4">

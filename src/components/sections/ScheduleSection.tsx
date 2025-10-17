@@ -84,9 +84,9 @@ const ScheduleSection = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-3 sm:mb-4">Расписание</h2>
           <p className="text-lg sm:text-xl text-gray-600">График работы и занятий</p>
         </div>
-        <div className="grid gap-6 max-w-6xl mx-auto">
+        <div className="grid gap-6 max-w-6xl mx-auto justify-items-center">
           {schedule.map((item, index) => (
-            <Card key={index} className="border-0 shadow-xl overflow-hidden hover-scale">
+            <Card key={index} className="border-0 shadow-xl overflow-hidden hover-scale w-full max-w-3xl">
               <div className="bg-gradient-to-r from-coral to-coral/80 px-4 sm:px-6 py-3 sm:py-4">
                 <CardTitle className="text-white text-xl sm:text-2xl font-bold">{item.day}</CardTitle>
               </div>

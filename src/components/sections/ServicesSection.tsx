@@ -75,13 +75,13 @@ const ServicesSection = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy mb-3 sm:mb-4">Наши занятия</h2>
           <p className="text-lg sm:text-xl text-gray-600">Развивающие программы для каждого ребёнка</p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 justify-items-center">
           {services.map((service, index) => (
             <article
               key={index} 
               itemScope
               itemType="https://schema.org/Service"
-              className={`hover-scale border-0 shadow-lg overflow-hidden rounded-lg bg-gradient-to-br ${service.bgColor} relative group cursor-pointer transition-transform duration-300`}
+              className={`hover-scale border-0 shadow-lg overflow-hidden rounded-lg bg-gradient-to-br ${service.bgColor} relative group cursor-pointer transition-transform duration-300 w-full max-w-md`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="relative h-44 sm:h-48 lg:h-56 flex flex-col items-start justify-start p-4 sm:p-6 overflow-hidden">

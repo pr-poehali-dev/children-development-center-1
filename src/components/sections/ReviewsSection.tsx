@@ -31,11 +31,11 @@ const ReviewsSection = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-navy mb-4 sm:mb-6">Отзывы</h2>
           <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-gray-600">Что говорят родители</p>
         </div>
-        <Carousel className="max-w-6xl mx-auto">
+        <Carousel className="max-w-4xl mx-auto">
           <CarouselContent>
             {reviews.map((review, index) => (
-              <CarouselItem key={index}>
-                <Card className="border-0 shadow-2xl rounded-2xl sm:rounded-3xl">
+              <CarouselItem key={index} className="flex justify-center">
+                <Card className="border-0 shadow-2xl rounded-2xl sm:rounded-3xl w-full max-w-3xl">
                   <CardHeader className="p-6 sm:p-10 lg:p-16">
                     <div className="flex gap-2 sm:gap-3 mb-6 sm:mb-8 justify-center">
                       {[...Array(review.rating)].map((_, i) => (
