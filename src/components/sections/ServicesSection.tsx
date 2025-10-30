@@ -1,4 +1,4 @@
-import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 
 const services = [
@@ -7,63 +7,72 @@ const services = [
     subtitle: 'от 3х лет',
     icon: 'Home', 
     bgColor: 'from-red-400 to-red-500',
-    circleColor: 'bg-red-300/40'
+    circleColor: 'bg-red-300/40',
+    link: '/mini-sad'
   },
   { 
     title: 'Логопед', 
     subtitle: '',
     icon: 'MessageCircle', 
     bgColor: 'from-teal-400 to-teal-500',
-    circleColor: 'bg-teal-300/40'
+    circleColor: 'bg-teal-300/40',
+    link: '/logoped'
   },
   { 
     title: 'Учусь, играя', 
     subtitle: '(от 4-6 лет)',
     icon: 'Gamepad2', 
     bgColor: 'from-orange-500 to-orange-600',
-    circleColor: 'bg-orange-400/40'
+    circleColor: 'bg-orange-400/40',
+    link: '/rannee-razvitie'
   },
   { 
     title: 'Скоро в школу', 
     subtitle: '(от 5-6 лет)',
     icon: 'Calendar', 
     bgColor: 'from-sky-400 to-sky-500',
-    circleColor: 'bg-sky-300/40'
+    circleColor: 'bg-sky-300/40',
+    link: '/podgotovka-k-shkole'
   },
   { 
     title: 'Английский', 
     subtitle: '(от 5-8 лет)',
     icon: 'BookOpen', 
     bgColor: 'from-indigo-500 to-indigo-600',
-    circleColor: 'bg-indigo-400/40'
+    circleColor: 'bg-indigo-400/40',
+    link: '/angliyskiy-dlya-detey'
   },
   { 
     title: 'Говорушки', 
     subtitle: '(от 3-4 лет)',
     icon: 'Users', 
     bgColor: 'from-red-400 to-red-500',
-    circleColor: 'bg-red-300/40'
+    circleColor: 'bg-red-300/40',
+    link: '/rannee-razvitie'
   },
   { 
     title: 'Шахматы', 
     subtitle: '',
     icon: 'Puzzle', 
     bgColor: 'from-teal-400 to-teal-500',
-    circleColor: 'bg-teal-300/40'
+    circleColor: 'bg-teal-300/40',
+    link: '/shahmaty'
   },
   { 
     title: 'Арт-терапия', 
     subtitle: '',
     icon: 'Paintbrush', 
     bgColor: 'from-orange-500 to-orange-600',
-    circleColor: 'bg-orange-400/40'
+    circleColor: 'bg-orange-400/40',
+    link: '/art-terapiya'
   },
   { 
     title: 'Няня на час', 
     subtitle: '',
     icon: 'UserCheck', 
     bgColor: 'from-indigo-500 to-indigo-600',
-    circleColor: 'bg-indigo-400/40'
+    circleColor: 'bg-indigo-400/40',
+    link: '/nyanya'
   },
 ];
 
@@ -77,11 +86,12 @@ const ServicesSection = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 justify-items-center">
           {services.map((service, index) => (
-            <article
-              key={index} 
+            <Link
+              key={index}
+              to={service.link}
               itemScope
               itemType="https://schema.org/Service"
-              className={`hover-scale border-0 shadow-lg overflow-hidden rounded-lg bg-gradient-to-br ${service.bgColor} relative group cursor-pointer transition-transform duration-300 w-full max-w-md`}
+              className={`hover-scale border-0 shadow-lg overflow-hidden rounded-lg bg-gradient-to-br ${service.bgColor} relative group cursor-pointer transition-transform duration-300 w-full max-w-md block`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="relative h-44 sm:h-48 lg:h-56 flex flex-col items-start justify-start p-4 sm:p-6 overflow-hidden">
@@ -101,7 +111,7 @@ const ServicesSection = () => {
                   </div>
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>
